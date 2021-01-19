@@ -29,7 +29,7 @@ CREATE TABLE `usuario` (
   `dataNascimento` varchar(20) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `tipo` varchar(20) DEFAULT NULL,
-  `senha` varchar(150) NOT NULL,
+  `senha` varchar(250) NOT NULL,
   `endereco` varchar(20) DEFAULT NULL,
   `complemento` varchar(20) DEFAULT NULL,
   `cidade` varchar(20) DEFAULT NULL,
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-18 12:56:37
+-- Dump completed on 2021-01-18 23:58:40
