@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: localhost    Database: asseguralgbtqi
+-- Host: localhost    Database: assegura
 -- ------------------------------------------------------
 -- Server version	5.7.31
 
@@ -16,34 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `voluntarios`
+-- Table structure for table `parceiros`
 --
 
-DROP TABLE IF EXISTS `voluntarios`;
+DROP TABLE IF EXISTS `parceiros`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `voluntarios` (
-  `id` int(15) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) DEFAULT NULL,
-  `sobreNome` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `senha` varchar(100) DEFAULT NULL,
-  `endereco` varchar(100) DEFAULT NULL,
-  `complemento` varchar(100) DEFAULT NULL,
-  `cidade` varchar(100) DEFAULT NULL,
-  `estado` varchar(100) DEFAULT NULL,
-  `cep` int(15) NOT NULL,
+CREATE TABLE `parceiros` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(20) NOT NULL,
+  `sobrenome` varchar(20) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `tipo` varchar(20) DEFAULT NULL,
+  `endereco` varchar(20) DEFAULT NULL,
+  `complemento` varchar(20) DEFAULT NULL,
+  `cidade` varchar(20) DEFAULT NULL,
+  `estado` varchar(20) DEFAULT NULL,
+  `cep` varchar(20) DEFAULT NULL,
+  `imagem` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `voluntarios`
+-- Dumping data for table `parceiros`
 --
 
-LOCK TABLES `voluntarios` WRITE;
-/*!40000 ALTER TABLE `voluntarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `voluntarios` ENABLE KEYS */;
+LOCK TABLES `parceiros` WRITE;
+/*!40000 ALTER TABLE `parceiros` DISABLE KEYS */;
+/*!40000 ALTER TABLE `parceiros` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-06  0:27:39
+-- Dump completed on 2021-01-19 12:55:34
