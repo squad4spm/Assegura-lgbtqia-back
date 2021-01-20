@@ -15,6 +15,10 @@ references voluntarios(id);
 SET FOREIGN_KEY_CHECKS=1;
 */
 
+/*Inserção de dados da tabela usuario em usuariojoin*/
+insert into assegura.usuariojoin (id, nome, sobrenome, dataNascimento, email, tipo, senha, endereco, complemento, cidade, estado, cep, imagem)
+select id, nome, sobrenome, dataNascimento, email, tipo, senha, endereco, complemento, cidade, estado, cep, imagem from assegura.usuario;
+
 /*Inserção de dados da tabela usuario em voluntarios*/
 insert into assegura.voluntarios (id, nome, sobrenome, email, tipo, cidade, estado, cep)
 select id, nome, sobrenome, email, tipo, cidade, estado, cep from assegura.usuario where tipo='Voluntário';
