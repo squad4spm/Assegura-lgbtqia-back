@@ -28,7 +28,7 @@ CREATE TABLE `usuario` (
   `sobrenome` varchar(20) DEFAULT NULL,
   `dataNascimento` varchar(20) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
-  `tipo` varchar(20) DEFAULT NULL,
+  `tipo` varchar(20) NOT NULL,
   `senha` varchar(250) NOT NULL,
   `endereco` varchar(20) DEFAULT NULL,
   `complemento` varchar(20) DEFAULT NULL,
@@ -36,7 +36,9 @@ CREATE TABLE `usuario` (
   `estado` varchar(20) DEFAULT NULL,
   `cep` varchar(20) DEFAULT NULL,
   `imagem` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id`) REFERENCES `parceiros` (`id`),
+  CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`id`) REFERENCES `voluntarios` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -46,7 +48,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'assegura','lgbtqia',NULL,'teste@teste.com',NULL,'827ccb0eea8a706c4c34a16891f84e7b',NULL,NULL,'São Paulo','SP',NULL,NULL),(2,'teste um',NULL,NULL,'teste1@teste.com',NULL,'$2y$10$s4J1EDNY1kKHh9Ez4xr64ek8NSKFRpG5cgAF5uTn2W4A5417CQ2SC',NULL,NULL,NULL,NULL,NULL,NULL),(3,'teste','','','teste2@teste.com','','$2y$10$ag4xOIY1TcuvY/NzK8RILuPLRu.yrH4oZQcSdUhQaBZEmeOY47m0O','','','','','',''),(4,'teste','tres','17/01/2021','teste3@teste.com','voluntario','$2y$10$Vvlm8XF7Gas4uLev/X685.niP5c46LkHDkL1yY7TPNp1p.rWdKLpS','rua a','casa 1','SÃ£o Paulo','SP','07130000','teste.png'),(5,'teste','quatro','30/01/1995','teste4@teste.com','VoluntÃ¡rio','$2y$10$RaRXtq25EFevZ/U4v6uBx.b4mS7Thr5h.NNF6Jx4M5r8hl2Ix2.6G','rua a 123','apartamento 5b','Guarulhos','SÃ£o Paulo','07134-060',''),(6,'teste','quatro','','teste5@teste.com','Parceiro','$2y$10$QaU84rmLG/DWf8q9RXGsGOTIprl/6JRVGIpF.xYJq8PjOp/kQmqvG','rua a 123','apartamento 5b','','SÃ£o Paulo','07134-060',''),(7,'testador','seis','30/01/1995','teste6@teste.com','VoluntÃ¡rio','$2y$10$1iIP825CHKO3G6K/Bdk5veNluWyvnLLO.UQB5Ggl0VII8yYyG3Eae','rua a 123','apartamento 5b','Guarulhos','SÃ£o Paulo','07134-060',''),(8,'testador7','sete','30/01/1995','teste7@teste.com','VoluntÃ¡rio','$2y$10$BAMPh5JSfh4QJbJRH.DTXOHYajmbNuIih0TeS1.IjmtrDuMvnu4Jq','rua a 123','apartamento 5b','Guarulhos','','07134-060',''),(9,'teste','oito','30/01/1995','teste8@teste.com','Voluntário','$2y$10$Z853N70r1SXx3.upust5cOvJwTrXGNKnmLRl3QxHEk6bnknCY6RyC','rua a 123','apartamento 5b','Guarulhos','São Paulo','07134-060','');
+INSERT INTO `usuario` VALUES (1,'assegura','lgbtqia',NULL,'teste@teste.com','Parceiro','827ccb0eea8a706c4c34a16891f84e7b',NULL,NULL,'São Paulo','SP',NULL,NULL),(2,'teste um',NULL,NULL,'teste1@teste.com','Parceiro','$2y$10$s4J1EDNY1kKHh9Ez4xr64ek8NSKFRpG5cgAF5uTn2W4A5417CQ2SC',NULL,NULL,NULL,NULL,NULL,NULL),(3,'teste','','','teste2@teste.com','Parceiro','$2y$10$ag4xOIY1TcuvY/NzK8RILuPLRu.yrH4oZQcSdUhQaBZEmeOY47m0O','','','','','',''),(4,'teste','tres','17/01/2021','teste3@teste.com','voluntario','$2y$10$Vvlm8XF7Gas4uLev/X685.niP5c46LkHDkL1yY7TPNp1p.rWdKLpS','rua a','casa 1','SÃ£o Paulo','SP','07130000','teste.png'),(5,'teste','quatro','30/01/1995','teste4@teste.com','VoluntÃ¡rio','$2y$10$RaRXtq25EFevZ/U4v6uBx.b4mS7Thr5h.NNF6Jx4M5r8hl2Ix2.6G','rua a 123','apartamento 5b','Guarulhos','SÃ£o Paulo','07134-060',''),(6,'teste','quatro','','teste5@teste.com','Parceiro','$2y$10$QaU84rmLG/DWf8q9RXGsGOTIprl/6JRVGIpF.xYJq8PjOp/kQmqvG','rua a 123','apartamento 5b','','SÃ£o Paulo','07134-060',''),(7,'testador','seis','30/01/1995','teste6@teste.com','VoluntÃ¡rio','$2y$10$1iIP825CHKO3G6K/Bdk5veNluWyvnLLO.UQB5Ggl0VII8yYyG3Eae','rua a 123','apartamento 5b','Guarulhos','SÃ£o Paulo','07134-060',''),(8,'testador7','sete','30/01/1995','teste7@teste.com','VoluntÃ¡rio','$2y$10$BAMPh5JSfh4QJbJRH.DTXOHYajmbNuIih0TeS1.IjmtrDuMvnu4Jq','rua a 123','apartamento 5b','Guarulhos','','07134-060',''),(9,'teste','oito','30/01/1995','teste8@teste.com','Voluntário','$2y$10$Z853N70r1SXx3.upust5cOvJwTrXGNKnmLRl3QxHEk6bnknCY6RyC','rua a 123','apartamento 5b','Guarulhos','São Paulo','07134-060','');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-19 12:55:34
+-- Dump completed on 2021-01-20 11:50:05

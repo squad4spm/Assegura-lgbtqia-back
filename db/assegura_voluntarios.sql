@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `voluntarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `voluntarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `sobrenome` varchar(20) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
@@ -31,9 +31,8 @@ CREATE TABLE `voluntarios` (
   `cidade` varchar(20) DEFAULT NULL,
   `estado` varchar(20) DEFAULT NULL,
   `cep` varchar(20) DEFAULT NULL,
-  `imagem` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +41,7 @@ CREATE TABLE `voluntarios` (
 
 LOCK TABLES `voluntarios` WRITE;
 /*!40000 ALTER TABLE `voluntarios` DISABLE KEYS */;
+INSERT INTO `voluntarios` VALUES (4,'teste','tres','teste3@teste.com','voluntario','SÃ£o Paulo','SP','07130000'),(9,'teste','oito','teste8@teste.com','Voluntário','Guarulhos','São Paulo','07134-060');
 /*!40000 ALTER TABLE `voluntarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-19 12:55:34
+-- Dump completed on 2021-01-20 11:50:05
