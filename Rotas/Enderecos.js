@@ -14,6 +14,7 @@ router.post('/', (req, res) => {
   const { body } = req;
 
   MEndereco.create({
+    userId: body.userId,
     rua: body.rua,
     numero: body.numero,
     bairro: body.bairro,
