@@ -23,10 +23,10 @@ router.post('/', (req, res) => {
     cep: body.cep,
   })
     .then(() => {
-      res.send('foi');
+      res.json({status: "OK"});
     })
-    .catch(() => {
-      res.send('nao foi');
+    .catch((e) => {
+      res.json({status: "ERROR", error: e});
     });
 });
 
