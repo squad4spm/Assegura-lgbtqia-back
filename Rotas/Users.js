@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
       MEndereco.findOne({ where: { userId: user.id } }).then(endereco => {
         const result = {
           id: user.id,
-          user: user.name,
+          user: user.nome,
           sobreNome: user.sobreNome,
           email: user.email,
           endereco: {
