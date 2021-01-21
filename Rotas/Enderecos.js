@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  const { body } = req;
 
-  return;
   MEndereco.create({
     rua: body.rua,
     numero: body.numero,
