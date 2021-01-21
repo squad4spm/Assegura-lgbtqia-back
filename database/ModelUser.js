@@ -1,23 +1,35 @@
 const Sequelize = require('sequelize');
 const connection = require('./database');
 
-const ModelUser = connection.define('blog_users', {
+const ModelUser = connection.define('users', {
+  nome: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
+  sobreNome: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
+  telefone: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
   email: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   password: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
   },
 });
 
-// ModelUser.sync({ force: false })
+// ModelUser.sync({ force: true })
 //   .then(() => {
-//     console.log('tabela blog_users criada');
+//     console.log('tabela users criada');
 //   })
 //   .catch(() => {
-//     console.log('erro na criação da tabela blog_users');
+//     console.log('erro na criação da tabela users');
 //   });
 
 module.exports = ModelUser;
