@@ -1,0 +1,22 @@
+{
+  "name": "cs_blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:diegozfreitas/cs_blog.git",
+  "author": "Diego <ddzadravec@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "5.22.1",
+    "slugify": "^1.4.5"
+  }
+}

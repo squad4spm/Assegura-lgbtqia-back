@@ -1,0 +1,15 @@
+<%- include('partials/header.ejs') %>
+<section id="pg_single">
+  <div class="container">
+    <h1><%= article.title%></h1>
+
+    <hr />
+
+    <div><%- article.content %></div>
+
+    <div>
+      <button onclick="history.go(-1);">Voltar</button>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer.ejs') %>

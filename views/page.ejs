@@ -1,0 +1,36 @@
+<%- include('partials/header.ejs') %>
+<section id="pg_home">
+  <div class="container">
+    <div class="menu_categories">
+      <h3>Categorias</h3>
+
+      <a href="/" style="margin: 10px">Todas</a>
+      <% categories.map(cat=>{ %> <% if(cat.id != 1){ %>
+      <a href="/category/<%= cat.slug %>"><%= cat.title %></a>
+      <% } %> <% }) %>
+    </div>
+
+    <div class="list_articles">
+      <% result.articles.rows.map(article=>{ %>
+      <a href="/article/<%= article.slug%>">
+        <div style="margin-bottom: 20px; background-color: #dedede"><%= article.title %></div>
+      </a>
+      <% }) %>
+    </div>
+
+    <div class="pagination">
+      <% if(result.page !== 1){ %>
+      <a href="/page/<%= result.page - 1 %>">
+        <button>Anterior</button>
+      </a>
+      <% }else{ %>
+      <div></div>
+      <% } %> <% if(result.page != result.pages){ %>
+      <a href="/page/<%= result.page + 1 %>">
+        <button>Proxima</button>
+      </a>
+      <% } %>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer.ejs') %>

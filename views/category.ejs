@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+  <div style="border: 1px solid #ddd; border-radius: 4px; padding: 20px 10px; margin-bottom: 40px">
+    <h3 style="margin: 10px">Categorias</h3>
+
+    <a href="/" style="margin: 10px">Todas</a>
+    <% categories.map(cat=>{ %> <% if(cat.id != 1){ %>
+    <a href="/category/<%= cat.slug %>" style="margin: 10px"><%= cat.title %></a>
+    <% } %> <% }) %>
+  </div>
+
+  <div style="border: 1px solid #ddd; border-radius: 4px; padding: 20px 10px; margin-bottom: 40px">
+    <h3 style="margin: 10px">Você esta na categoria: <em><%= category.title %></em></h3>
+  </div>
+
+  <div>
+    <% articles.map(article=>{ %>
+    <a href="/article/<%= article.slug%>">
+      <div style="margin-bottom: 20px; background-color: #dedede"><%= article.title %></div>
+    </a>
+    <% }) %>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>
